@@ -1,2 +1,8 @@
-# t44p-macos
-ThinkPad T44p Hackintosh configuration &amp; guide
+# First steps
+This guide is compatible with Linux/Mac systems. Follow the steps below.
+
+### Dependencies
+* p7zip
+* python
+* bash
+* git
