@@ -119,7 +119,7 @@ function partition {
 		sudo sgdisk --zap-all ${flashdrive}
 		sudo sgdisk -n 0:0:+200MiB -t 0:0700 ${flashdrive}
 		sudo sgdisk -n 0:0:0 -t 0:af00 ${flashdrive}
-		sudo mkfs.vfat -F 32 -n "CLOVER" ${flashdrive}1
+		sudo mkfs.vfat -F 32 -n "USB_EFI" ${flashdrive}1
 	fi
 
 }
