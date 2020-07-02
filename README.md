@@ -42,7 +42,7 @@ This guide is compatible with Linux/Mac systems. Follow the steps below.
 # Create bootable USB
 
 ### Preparation
-* Make sure you have all the mentioned dependencies, then clone/download this repository.
+* Make sure you have all the mentioned dependencies, then [download](https://github.com/swanux/t440p/releases) the latest release.
 * Also make sure that you've enough free space and a good internet connection
 
 ### Follow the steps below
