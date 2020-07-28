@@ -32,7 +32,7 @@ This guide is compatible with Linux/Mac systems. Follow the steps below.
 - You'll need to have an unlocked BIOS -> [Check here](https://notthebe.ee/2020/06/17/Removing-the-Wi-Fi-Whiteslit-on-Haswell-Thinkpads-T440p-W540-T540-etc/) (or ask for help on bios mods, Dudu2002 recommended)
 
 ##### Dock reboot on sleep
-- Use your mini DP instead of the dock's display output. Keep your dock's display output free. see also [#1](/../../issues/1)
+- Use your mini DP instead of the dock's display output. Keep your dock's display output free. see also [#1](/../../issues/1#issuecomment-660651049)
 
 ### Dependencies
 * p7zip
