@@ -10,8 +10,8 @@ This guide is compatible with Linux/Mac systems. Follow the steps below.
 - Power management/sleep
 - Brightness/Volume Control
 - Battery Information
-- Audio : from internal speaker and headphone jack (see `Known problems` below)
-- USB Ports, Built-in Camera
+- Audio (everything)
+- USB Ports, Built-in Camera, DisplayPort
 - Graphics Acceleration
 - FaceTime/iMessage
 - DVD Drive
@@ -21,14 +21,14 @@ This guide is compatible with Linux/Mac systems. Follow the steps below.
 - Dock DisplayPorts, HDMI, DVI and VGA
 
 ### Known problems:
-- Ultra Dock problems (sleep/shutdown causes kernel panic and reboot when docked, also audio jack broken)
-- Strong white noise from audio jack when waking up from sleep (reboot solves)
+- Ultra Dock problems (sleep/shutdown causes kernel panic and reboot when docked)
 - WiFi and Bluetooth
 - SD card reader
-- Automatic switching between internal and external speakers through jack (need to switch manually)
 
 ### Solutions/Fixes:
-- For WiFi/Bluetooth you have to buy a macOS compatible network card (or you can use USB adapters). Otherwise you can check this guide (not sure if it works) -> [Check here](https://notthebe.ee/2019/06/11/airport/)
+
+##### WiFi and Bluetooth
+- For WiFi/Bluetooth you have to buy a macOS compatible network card (or you can use USB adapters). Otherwise you can check this guide (I can confirm, it works) -> [Check here](https://notthebe.ee/2019/06/11/airport/)
 - You'll need to have an unlocked BIOS -> [Check here](https://notthebe.ee/2020/06/17/Removing-the-Wi-Fi-Whiteslit-on-Haswell-Thinkpads-T440p-W540-T540-etc/) (or ask for help on bios mods, Dudu2002 recommended)
 
 ### Dependencies
@@ -51,9 +51,12 @@ This guide is compatible with Linux/Mac systems. Follow the steps below.
 3. During execution after download you need to provide the name of your USB device from a list. **Pay attention to it's size!**
 4. Wait until script executes
 5. Identify the EFI partition of your USB stick (ie. with `lsblk`, usually it's 200M') **Note:** usually it's mounted automatically, it's name is `USB_EFI`
-6. Mount it with: `sudo mount /dev/sd? /mnt/` on Linux (only if needed)
-7. Copy **EFI and Tools** folders from this repo to /mnt/
-8. Unmount the USB drive and unplug it
+6. Mount it with: `sudo mount /dev/sd? /mnt/` on Linux (**only if needed**)
+7. Extract GenSMBIOS, open a terminal, cd into its folder and execute `./GenSMBIOS.command`
+8. Choose option **2**, then drag the **config.plist** from the **EFI** folder into the terminal.
+9. Choose option **3**, and type `MacbookPro11,1 1`. When ready, press `q` to exit. **Note:** If you need more explanation, check the PDF file.
+10. Copy **EFI and SoundFix.zip** folders to `USB_EFI`
+11. Unmount the USB drive and unplug it
 
 # Installation
 
@@ -80,22 +83,17 @@ Now you can go through the install.
 
 1. Now, boot from USB and select the USB drive inside of OpenCore. (named **macOS Base System**)
 	- **Note:** First boot may take up to 20 minutes
-2. While booting, connect your phone via USB and turn on USB Tethering
+2. While booting, connect your phone via USB and turn on USB Tethering (skip if you have proper network card)
 3. Wait for macOS Utilities screen.
 4. Select **Disk Utility**, select your disk, click erease, give a name and choose **APFS** with **GUID Partition Map**.
-5. After done, go back, and select **Reinstall macOS**. After the laptop reboots, you can unplug your phone.
-6. After this is done, reboot the computer and let it sit. Mine rebooted a few times on its own to go through some final installation procedures. It will take a **lots** of time.
+5. After done, go back, and select **Reinstall macOS**. Wait for downloading. After the it is ready, you can unplug your phone.
+6. After this is done, reboot the computer and let it sit. It will take a **lots** of time.
 7. Once you see the `Region selection` screen, you are good to proceed.
-8. Create your user account and everything else. If it asks you to connect to a network, select the option that says do not connect and press continue. We will connect it later.
+8. Create your user account and everything else.
 9. After you've booted, press **Alt+Space**, write in **settings** then press enter. Click on **Trackpad**, and **uncheck Force Click and haptic feedback**. Now your trackapd works fine.
-10. **Alt+Space** again, and open **terminal**. Execute `diskutil list` and find your main disk. Then type `sudo diskutil mountDisk /dev/disk0`. (In case your disk isn't disk0, replace it with correct value)
-11. Open Finder and copy EFI folder from `USB_EFI` partition to `EFI` partition.
-12. Execute `sudo mount -uw /` and then install HoRNDIS from Tools if you want USB tethering support. **Note:** It's just temporarly, after reboot you need to install it again.
-13. Extract GenSMBIOS to the Desktop, open a terminal, cd into its folder and execute `./GenSMBIOS.command`
-14. Choose option **2**, then drag the config.plist from the system EFI folder into the terminal.
-15. Choose option **3**, and type `iMacPro1,1 10`. When ready, press `q` to exit. **Note:** If you need more explanation, check the PDF file in the Tools folder.
-18. Reboot your laptop, and when booted, sign in with Apple ID in System Preferences. **Note:** After you agree to the License agreement, it may stuck in an infinite loading state. You can go back without a problem. (going back is **not equal** to pressing cancel!)
-19. Now you can enjoy your working installation! Optionally follow the rest of the guide.
+10. **Alt+Space** again, and open **terminal**. Type `sudo diskutil mountDisk disk0`. (In case your disk isn't disk0, replace it with correct value)
+11. Open Finder and copy **EFI** folder from `USB_EFI` partition to `EFI` partition.
+12. Unplug the USB drive and reboot your laptop. Now you can enjoy your working installation! Optionally follow the rest of the guide.
 
 <!--# Post-Installation-->
 
@@ -146,11 +144,16 @@ If you are using a HDD or SSD in place of the normal optical drive, you will nee
 5. When all desired changes have been made, select the `File` menu and choose **Save**.
 6. Return to `~/Library/Preferences` and copy the `com.apple.SystemProfiler.plist` file from your **Modified** folder into this directory. Enter your password when prompted and then click `Replace`.
 
+# Debugging
+
+Use `EFI_DEBUG` instead of `EFI`.
+
 # Credits
 
 Many thanks to:
-* [OpenCore](https://dortania.github.io/OpenCore-Desktop-Guide/) - For this great open-source bootloader
-* [tonymacx86](https://www.tonymacx86.com/) - For the lots of avilable knowledge
+* [OpenCore Team](https://github.com/acidanthera/OpenCorePkg) - For this great open-source bootloader
+* [Dortania](https://dortania.github.io/OpenCore-Install-Guide/) - For this excellent guide
+* [tonymacx86](https://www.tonymacx86.com/) - For the lots of avilable knowledge (even though they're banning with no reason sometimes)
 * [notthebee](https://github.com/notthebee) - For lots of support for ThinkPads
 * [jloisel](https://github.com/jloisel) - For his Clover configuration
-* [Google](https://google.com) - For finding answers from various segments of the internet
+* [Google](https://google.com) - For finding answers from various segments of the internet (even though they're stealing user data)
