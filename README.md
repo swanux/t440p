@@ -25,11 +25,14 @@ This guide is compatible with Linux/Mac systems. Follow the steps below.
 - WiFi and Bluetooth
 - SD card reader
 
-### Solutions/Fixes:
+### Fixes / Workarounds:
 
 ##### WiFi and Bluetooth
 - For WiFi/Bluetooth you have to buy a macOS compatible network card (or you can use USB adapters). Otherwise you can check this guide (I can confirm, it works) -> [Check here](https://notthebe.ee/2019/06/11/airport/)
 - You'll need to have an unlocked BIOS -> [Check here](https://notthebe.ee/2020/06/17/Removing-the-Wi-Fi-Whiteslit-on-Haswell-Thinkpads-T440p-W540-T540-etc/) (or ask for help on bios mods, Dudu2002 recommended)
+
+##### Dock reboot on sleep
+- Use your mini DP instead of the dock's display output. Keep your dock's display output free. see also [#1](/../../issues/1)
 
 ### Dependencies
 * p7zip
