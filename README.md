@@ -21,7 +21,7 @@ This guide is compatible with Linux/Mac systems. Follow the steps below.
 - Dock DisplayPorts, HDMI, DVI and VGA
 
 ### Known problems:
-- Ultra Dock problems (sleep/shutdown causes kernel panic and reboot when docked)
+- Ultra Dock problems (sleep/shutdown causes kernel panic and reboot when docked) Also for some people there may be sleep problems even without external display.
 - WiFi and Bluetooth
 - SD card reader
 
@@ -31,8 +31,9 @@ This guide is compatible with Linux/Mac systems. Follow the steps below.
 - For WiFi/Bluetooth you have to buy a macOS compatible network card (or you can use USB adapters). Otherwise you can check this guide (I can confirm, it works) -> [Check here](https://notthebe.ee/2019/06/11/airport/)
 - You'll need to have an unlocked BIOS -> [Check here](https://notthebe.ee/2020/06/17/Removing-the-Wi-Fi-Whiteslit-on-Haswell-Thinkpads-T440p-W540-T540-etc/) (or ask for help on bios mods, Dudu2002 recommended)
 
-##### Dock reboot on sleep
-- Use your mini DP instead of the dock's display output. Keep your dock's display output free. [see also](/../../issues/1#issuecomment-660651049)
+##### Dock problems
+- Use your mini DP instead of the dock's display output. Keep your dock's display output free. Reference [here](/../../issues/1#issuecomment-660651049)
+- To fix sleep problems when no external display is attatched to the dock, check [here](https://github.com/swanux/t440p/issues/2#issuecomment-667629213)
 
 ### Dependencies
 * p7zip
