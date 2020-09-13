@@ -162,3 +162,6 @@ Many thanks to:
 * [notthebee](https://github.com/notthebee) - For lots of support for ThinkPads
 * [jloisel](https://github.com/jloisel) - For his Clover configuration
 * [Google](https://google.com) - For finding answers from various segments of the internet (even though they're stealing user data)
+
+# Feedbacks
+Did you find any bugs? Do you have some feature requests/new ideas? Or just some questions? Feel free to provide your feedback using [hsuite](https://github.com/swanux/hsuite) or my [website](https://swanux.github.io/feedbacks.html).
