@@ -57,10 +57,14 @@ This guide is compatible with Linux/Mac systems. Follow the steps below.
 5. Identify the EFI partition of your USB stick (ie. with `lsblk`, usually it's 200M') **Note:** usually it's mounted automatically, it's name is `USB_EFI`
 6. Mount it with: `sudo mount /dev/sd? /mnt/` on Linux (**only if needed**)
 7. Extract GenSMBIOS, open a terminal, cd into its folder and execute `./GenSMBIOS.command`
-8. **IMPORTANT!** Decide if you have a macOS compatible network card or not. If you don't have one, please use `EFI_DEBUG` instead of `EFI`. For steps **9** and **10**, please apply everything to both `EFI` and `EFI_DEBUG` if you are using `EFI_DEBUG`!
-9. Choose option **2**, then drag the **Config.plist** from the **EFI** folder into the terminal.
+8. **IMPORTANT!** Decide which EFI version would you like to use.
+    - AirportNetworkCard: You have an Apple Airport card with an adapter built in
+    - Debug: You would like to see debug information (it has everything inside it)
+    - OtherNetworkCard: You have neither airport nor intel card
+    - USBTethering: You have no macOS compatible card, but you have a smartphone to share internet
+9. Choose option **2**, then drag the **Config.plist** from the chosen **EFI** folder into the terminal.
 10. Choose option **3**, and type `MacbookPro11,1 1`. When ready, press `q` to exit. **Note:** If you need more explanation, check the PDF file.
-11. Copy **EFI and SoundFix.zip** folders to `USB_EFI` (if you're using `EFI_DEBUG` rename it to `EFI` after copying to USB, and copy original `EFI` as `EFI_NORMAL` or something like this)
+11. Copy **EFI and SoundFix.zip** folders to `USB_EFI`
 12. Unmount the USB drive and unplug it
 
 # Installation
@@ -148,10 +152,6 @@ If you are using a HDD or SSD in place of the normal optical drive, you will nee
 4. Within this file, locate a string matching the model of Mac which is currently displayed in the 'About This Mac' window and replace it with any text of your choice. For example, 'iMac (Retina 5K, 27-inch, Late 2015)' becomes 'ThinkPad T440p (13-inch, 2014)'.
 5. When all desired changes have been made, select the `File` menu and choose **Save**.
 6. Return to `~/Library/Preferences` and copy the `com.apple.SystemProfiler.plist` file from your **Modified** folder into this directory. Enter your password when prompted and then click `Replace`.
-
-# Debugging
-
-Use `EFI_DEBUG` instead of `EFI`.
 
 # Credits
 
