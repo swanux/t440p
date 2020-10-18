@@ -64,7 +64,7 @@ This guide is compatible with Linux/Mac systems. Follow the steps below.
     - USBTethering: You have no macOS compatible card, but you have a smartphone to share internet
 9. Choose option **2**, then drag the **Config.plist** from the chosen **EFI** folder into the terminal.
 10. Choose option **3**, and type `MacbookPro11,1 1`. When ready, press `q` to exit. **Note:** If you need more explanation, check the PDF file.
-11. Copy **EFI and SoundFix.zip** folders to `USB_EFI`
+11. Copy **EFI** folder and **SoundFix.zip** file to the root directory of `USB_EFI`
 12. Unmount the USB drive and unplug it
 
 # Installation
@@ -100,9 +100,10 @@ Now you can go through the install.
 7. Once you see the `Region selection` screen, you are good to proceed.
 8. Create your user account and everything else.
 9. After you've booted, press **Alt+Space**, write in **settings** then press enter. Click on **Trackpad**, and **uncheck Force Click and haptic feedback**. Now your trackapd works fine.
-10. **Alt+Space** again, and open **terminal**. Type `sudo diskutil mountDisk disk0`. (In case your disk isn't disk0, replace it with correct value)
-11. Open Finder and copy **EFI** folder from `USB_EFI` partition to `EFI` partition. **Note** If you used `EFI_DEBUG`, then do not copy that, copy the other one, `EFI_NORMAL` for example
-12. Unplug the USB drive and reboot your laptop. Now you can enjoy your working installation! Optionally follow the rest of the guide.
+10. **Alt+Space** again, and open **terminal**. Type `sudo diskutil mountDisk disk0s1` (where disk0s1 corresponds to the EFI partition of the main disk with the new macOS install)
+11. Open Finder and copy **EFI** folder from `USB_EFI` partition to the main disk's `EFI` partition.
+12. Copy **SoundFix.zip** to your Desktop and extract it. Then open the folder in terminal and run `bash install.sh` to install it. After it's done, you can delete the files if you wish.
+13. Unplug the USB drive and reboot your laptop. Now you can enjoy your working installation! Optionally follow the rest of the guide.
 
 <!--# Post-Installation-->
 
