@@ -1,0 +1,8 @@
+https://github.com/acidanthera/VirtualSMC
+https://github.com/acidanthera/AppleALC
+https://github.com/acidanthera/WhateverGreen
+https://github.com/acidanthera/VoodooPS2
+https://github.com/acidanthera/Lilu
+https://github.com/acidanthera/IntelMausi
+https://github.com/acidanthera/AirportBrcmFixup
+

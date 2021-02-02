@@ -30,7 +30,7 @@ function version {
 	Press Enter to download latest release (default)
 	[M]ojave (10.14)
 	[C]atalina (10.15)
-	[B]ig Sur (11.1)
+	[B]ig Sur (11)
 
 	'
 	read -n 1 -p "[M/C/B] " macOS_release_name 2>/dev/tty
