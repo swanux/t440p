@@ -1,5 +1,8 @@
 # T440p Hackintosh
 
+## Notice
+I no longer have a T440p, so this repo can be considered obsolete. Feel free to use any part of this config. Credit would be appreciated (not just me, but everyone else whose work is included in this repo - refer to the credit section of the Wiki).
+
 ## For documentation, visit the [Wiki](https://github.com/swanux/t440p/wiki).
 
 ## Description
